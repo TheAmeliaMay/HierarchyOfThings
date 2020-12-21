@@ -1,0 +1,108 @@
+body {
+    color: white;
+    background-color: #191919; /*dark gray*/
+
+    font-family: "Courier", Serif;
+    margin: 5vmin;
+
+    margin-left: 20%;
+    margin-right: 20%;
+}
+
+p {
+    text-indent: 5vmin;
+}
+
+a {
+    color: cornflowerblue;
+}
+
+a:hover {
+    color: cadetblue;
+}
+
+button {
+    padding: 0.5%;
+
+    font-family: "Courier", Serif;
+    font-weight: bold;
+    font-size: 3vmin;
+}
+
+button:hover {
+    
+}
+
+h1, h2 {
+    text-align: center;
+}
+
+#chart_title {
+    margin-top: 5vmin;
+    cursor: pointer;
+}
+
+#chart {
+    background-color: #333333; /*gray*/
+    padding-top: 0.01%;
+    padding-bottom: 0.01%;
+}
+
+#t1 .tier_title {
+    background-color: red;
+}
+
+#t2 .tier_title {
+    background-color: orange;
+}
+
+#t3 .tier_title {
+    background-color: gold;
+}
+
+#t4 .tier_title {
+    background-color: green;
+}
+
+#t5 .tier_title {
+    background-color: cornflowerblue;
+}
+
+#t6 .tier_title {
+    background-color: blueviolet;
+}
+
+#t7 .tier_title {
+    background-color: violet;
+}
+
+.tier {
+    background-color: #212121; /*dark gray 2*/
+
+    margin: 2vmin;
+
+    padding: 1vmin;
+    padding-left: 0;
+}
+
+.tier_title {
+    color: #191919; /*dark gray*/
+
+    font-size: 50px;
+    font-weight: bold;
+
+    padding-left: 2.5vmin;
+    padding-right: 2.5vmin;
+    padding-top: 1.1vmin;
+    padding-bottom: 1.1vmin;
+
+    cursor: pointer;
+}
+
+.tier_img {
+    height: 7.8vmin;
+    width: auto;
+
+    position: absolute;
+    cursor: move;
+}

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link href='style.css' rel='stylesheet' type='text/css'>
+    <title>Hierarchy of Things</title>
+    <link rel="icon" type="x-icon" href="favicon.ico">
+    <meta charset="utf-8">
+
+    <meta name="author" content="Amelia May Johnson">
+    <meta name="description" content="Hierarchy of Things">
+    <meta name="tags" content="Hierarchy of Things">
+</head>
+<body>
+    <h1>Hierarchy of Things</h1>
+    <h2 id="chart_title" onclick="changeTitle()">Click to Change Title</h2>
+
+    <div id="chart">
+        <div id="t1" class="tier" ondblclick="addImage(1)">
+            <span class="tier_title" onclick="changeTierTitle(1)" oncontextmenu="changeTierColor(1)">S</span>
+            <span class="tier_content"></span>
+        </div>
+        <div id="t2" class="tier" ondblclick="addImage(2)">
+            <span class="tier_title" onclick="changeTierTitle(2)" oncontextmenu="changeTierColor(2)">A</span>
+            <span class="tier_content"></span>
+        </div>
+        <div id="t3" class="tier" ondblclick="addImage(3)">
+            <span class="tier_title" onclick="changeTierTitle(3)" oncontextmenu="changeTierColor(3)">B</span>
+            <span class="tier_content"></span>
+        </div>
+        <div id="t4" class="tier" ondblclick="addImage(4)">
+            <span class="tier_title" onclick="changeTierTitle(4)" oncontextmenu="changeTierColor(4)">C</span>
+            <span class="tier_content"></span>
+        </div>
+        <div id="t5" class="tier" ondblclick="addImage(5)">
+            <span class="tier_title" onclick="changeTierTitle(5)" oncontextmenu="changeTierColor(5)">D</span>
+            <span class="tier_content"></span>
+        </div>
+        <div id="t6" class="tier" ondblclick="addImage(6)">
+            <span class="tier_title" onclick="changeTierTitle(6)"oncontextmenu="changeTierColor(6)" >E</span>
+            <span class="tier_content"></span>
+        </div>
+        <div id="t7" class="tier" ondblclick="addImage(7)">
+            <span class="tier_title" onclick="changeTierTitle(7)" oncontextmenu="changeTierColor(7)" >F</span>
+            <span class="tier_content"></span>
+        </div>
+    </div><br>
+
+    <h2>How To Use</h2>
+    <p>To change the title of the chart or a tier: simply left-click on it. To change the color of a tier, right-click on the colored portion. Double-click on a tier to add an image to it, and right-click that image to destroy it. To move images: simply drag them.</p>
+    <p>You'll have to upload your own images to another website such as <a href="https://imgur.com/" target="_blank">Imgur</a> or <a href="https://imgbb.com/" target="_blank">ImgBB,</a> and copy the link into the prompt that comes up when trying to add an image. In order to save your Hierarchy of Things: take a screenshot and save it to your device.</p>
+    <p>If your image does not appear: you have pasted an invalid URL, or the host website has blocked hotlinking. If the URL is invalid: copy it again. Many websites don't allow hotlinking, and there's nothing you can do about it, but if you use one of the services listed above: you should always be able to hotlink your image, so long as it is not removed.</p>
+    <p>Report bugs and suggest features on the <a href="https://github.com/TheAmeliaMay/HierarchyOfThings" target="_blank">GitHub Page.</a> Created by <a href="https://theameliamay.neocities.org/" target="_blank">Amelia May Johnson.</a></p>
+
+    <script src="main.js" type="text/javascript"></script>
+</body>
+</html>
