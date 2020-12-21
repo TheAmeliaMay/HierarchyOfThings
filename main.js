@@ -78,7 +78,7 @@ function moveImage(t, n) {
     var img = tier.getElementsByClassName('tier_img')[n];
     var e = window.event;
     var yChange = e.clientY - img.getBoundingClientRect().top - img.height / 2;
-    var newY = (e.clientY - img.width / 2);
+    var newY = (e.clientY - img.height / 2);
 
     img.style.left = (e.clientX - img.height / 2) + 'px';
 
