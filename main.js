@@ -22,7 +22,7 @@ function changeTierColor(t) {
 function addImage(t, src=null, top=null, left=null) {
     var tier = document.getElementById('t' + t.toString());
     var content = tier.getElementsByClassName('tier_content')[0];
-    var n = content.getElementsByClassName('tier_img').length;
+    var n = Array.from(content.getElementsByClassName('tier_img')).length;
 
     var img = document.createElement('img');
 
@@ -48,10 +48,6 @@ function addImage(t, src=null, top=null, left=null) {
 
     img.classList.add('tier_img');
 
-    img.addEventListener('dragend', function() {
-        moveImage(t, n);
-    });
-
     img.addEventListener('contextmenu', function() {
         img.remove();
     });
@@ -61,6 +57,17 @@ function addImage(t, src=null, top=null, left=null) {
     };
 
     content.appendChild(img);
+}
+
+function addMoveEvents(t) {
+    var tier = document.getElementById('t' + t.toString());
+    var images = tier.getElementsByClassName('tier_img');
+
+    for (let i = 0; i < images.length; i++) {
+        images[i].addEventListener('dragend', function() {
+            moveImage(t, i);
+        });
+    }
 }
 
 function moveImage(t, n) {
@@ -79,24 +86,34 @@ function moveImage(t, n) {
     if (yChange >= height || yChange < 0) {
         let tiers = document.getElementsByClassName('tier');
         let currentTier = tiers[0];
-        let currentI = 0;
 
         for (let i = 0; i < tiers.length; i++) {
             let thisTier = tiers[i];
             if (Math.abs(thisTier.getBoundingClientRect().top - newY) < Math.abs(currentTier.getBoundingClientRect().top - newY)) {
                 currentTier = thisTier;
-                currentI = i;
             }
         }
 
-        img.style.top = currentTier.getBoundingClientRect().top + 'px';
-        addImage(currentI + 1, img.src, img.style.top, img.style.left);
+        let left = img.style.left;
+        let src = img.src;
         img.remove();
+        addImage(Array.from(tiers).indexOf(currentTier) + 1, src, currentTier.getBoundingClientRect().top + 'px', left);
     }
 }
 
 window.onload = function() {
     document.getElementById('chart').addEventListener('contextmenu', function(e){
         e.preventDefault()
+    });
+
+    document.getElementById('chart').addEventListener('dragend', function(e){
+        let tiers = document.getElementsByClassName('tier');
+
+        for (let i = 0; i < tiers.length; i++) {
+            let n = Array.from(tiers[i].getElementsByClassName('tier_img')).indexOf(e.target);
+            if (n > -1) {
+                moveImage(i + 1, n);
+            }
+        }
     });
 };
